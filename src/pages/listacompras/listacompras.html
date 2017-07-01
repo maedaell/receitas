@@ -20,7 +20,7 @@
   </form>
 
   <ion-list>
-    <ion-item *ngFor="let item of listaItens; let i=index" >
+    <ion-item *ngFor="let item of listaItens; let i=index" (click)="removeItem(i)">
       <h3>{{ item.nome }} : {{item.quantidade}}</h3>
     </ion-item>
   </ion-list>

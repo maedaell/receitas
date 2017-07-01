@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
 import { ListaComprasService } from '../services/lista-compras.service'
+import { ReceitaService } from '../services/receitas.service'
 
 import { ListacomprasPage } from '../pages/listacompras/listacompras';
 import { ReceitasPage } from '../pages/receitas/receitas';
@@ -45,6 +46,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     StatusBar,
     SplashScreen,
     ListaComprasService,
+    ReceitaService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

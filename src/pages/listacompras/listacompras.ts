@@ -43,4 +43,9 @@ export class ListacomprasPage {
     this.listaItens=this.listaComprasService.getItens();
   }
 
+  removeItem(index: number) {
+    this.listaComprasService.removeItem(index);
+    this.carregaItens();
+  }
+
 }
