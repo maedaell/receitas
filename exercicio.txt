@@ -1,0 +1,13 @@
+chat
+------------------------------------------------------
+-fazer tela de login 
+-enviar a msg com o login
+-mostrar a msg com o login além da data
+
+receitas
+------------------------------------------------------
+-incluir na tela de ingredientes da receita a opção de remover 1 item
+-ao adicionar os ingredientes de uma receita na lista de compras totalizar/somar a quantidade de ingredientes iguais
+-na lista de compras usar o slide ao invez do clic para remover os itens da lista
+-pedir confirmação para remover a receita
+-mostrar msg dizendo que ingredientes foram incluidos na lista de compra
