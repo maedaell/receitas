@@ -18,6 +18,7 @@ export class EditaReceitaPage {
   receita: Receita;
   index: number;
   
+  actionSheet;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
@@ -72,14 +73,16 @@ export class EditaReceitaPage {
   }
 
   editaIngredientes() {
-    const actionSheet = this.actionSheetController.create({
+    this.actionSheet = this.actionSheetController.create({
       title: 'Escolha uma opção',
       buttons: [
         {
           text: 'Adiciona ingrediente',
+          role: '',
           handler:() => {
+            this.actionSheet.dismiss();
             this.criaAlertaNovoIngrediente().present();
-            this.criaAlertaNovoIngrediente().dismiss();
+            return false;
           }
         },
         {
@@ -107,7 +110,7 @@ export class EditaReceitaPage {
         }
         ]
     });
-    actionSheet.present();
+    this.actionSheet.present();
   }
 
   private criaAlertaNovoIngrediente() {
