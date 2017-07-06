@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { Receita } from "../../model/receita";
 import { EditaReceitaPage } from "../edita-receita/edita-receita";
 import { ListaComprasService } from "../../services/lista-compras.service";
@@ -16,7 +16,8 @@ export class ReceitaPage implements OnInit {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private listaComprasService: ListaComprasService,
-              private receitasService: ReceitaService ) {}
+              private receitasService: ReceitaService,
+              private alertCtrl: AlertController ) {}
 
   ngOnInit(): void {
       this.receita=this.navParams.get('receita');
@@ -28,8 +29,29 @@ export class ReceitaPage implements OnInit {
   }
 
   removeReceita() {
-    this.receitasService.removeReceita(this.index);
-    this.navCtrl.popToRoot();
+    let alert = this.alertCtrl.create({
+      title: 'Apagar???',
+      message: 'Voce quer apagar esta receita?',
+      buttons: [
+        {
+          text: 'Nao',
+          role: 'cancel',
+          handler: () => {
+            console.log('Selecionou nao apagar');
+          }
+        },
+        {
+          text: 'Sim',
+          handler: () => {
+            console.log('Selecionou apagar');
+            this.receitasService.removeReceita(this.index);
+            this.navCtrl.popToRoot();
+          }
+        }
+      ]
+    });
+
+    alert.present();
   }
 
   adicionaIngredientes() {

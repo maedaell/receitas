@@ -17,7 +17,7 @@ export class EditaReceitaPage {
   formReceita: FormGroup;
   receita: Receita;
   index: number;
-  
+
   actionSheet;
 
   constructor(public navCtrl: NavController, 
@@ -53,6 +53,11 @@ export class EditaReceitaPage {
       'dificuldade': new FormControl(dificuldade, Validators.required),
       'ingredientes': new FormArray(ingredientes)
     });
+  }
+
+  removeItem(index: number) {
+    const fArray: FormArray = <FormArray>this.formReceita.get('ingredientes');
+    fArray.removeAt(index);
   }
 
   envia() {
