@@ -10,4 +10,4 @@ receitas
 -ao adicionar os ingredientes de uma receita na lista de compras totalizar/somar a quantidade de ingredientes iguais
 -na lista de compras usar o slide ao invez do clic para remover os itens da lista done
 -pedir confirmação para remover a receita done
--mostrar msg dizendo que ingredientes foram incluidos na lista de compra
+-mostrar msg dizendo que ingredientes foram incluidos na lista de compra done

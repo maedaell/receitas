@@ -56,6 +56,17 @@ export class ReceitaPage implements OnInit {
 
   adicionaIngredientes() {
     this.listaComprasService.incluiItens(this.receita.ingredientes);
+
+    let alert = this.alertCtrl.create({
+      title: 'Ingredientes adicionados',
+      message: 'Os ingredientes foram adicionados a lista de compras',
+      buttons: [
+        {
+          text: 'OK'
+        }
+      ]
+    });
+    alert.present();
   }
 
 
