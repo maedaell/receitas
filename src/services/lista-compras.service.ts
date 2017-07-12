@@ -22,17 +22,19 @@ export class ListaComprasService {
       console.log (this.size_main);
       console.log (size_group);
 
-      for (i = 0; i < this.size_main; i++) {
+      this.itens.push(...itens);
+
+      for (i = 0; i < this.itens.length; i++) {
         found = false; 
-        for (j = 0; j < size_group; j++) {
+        for (j = 0; j < ingredientes_group.length; j++) {
           if (this.itens[i].nome == ingredientes_group[j].nome) {
             found = true;
-            ingredientes_group[j].quantidade += this.itens[i].quantidade;
+            ingredientes_group[j].quantidade = Number(this.itens[i].quantidade) + Number(ingredientes_group[j].quantidade);
             break;
           }
         }
         if (!found) {
-          ingredientes_group.push(new Ingrediente(this.itens[i].nome, 1));
+          ingredientes_group.push(new Ingrediente(this.itens[i].nome, this.itens[i].quantidade));
           size_group++;
         }
       }
